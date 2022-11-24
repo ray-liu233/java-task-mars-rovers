@@ -5,6 +5,10 @@ public class MarsCar {
     private int coordinateY;
     private String direction;
 
+    static int maxCoordinateX;
+
+    static int maxCoordinateY;
+
     public MarsCar(int coordinateX, int coordinateY, String direction){
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
