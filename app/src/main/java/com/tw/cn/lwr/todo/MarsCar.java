@@ -9,6 +9,8 @@ public class MarsCar {
 
     static int maxCoordinateY;
 
+    public MarsCar() {}
+
     public MarsCar(int coordinateX, int coordinateY, String direction){
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
@@ -25,6 +27,19 @@ public class MarsCar {
 
     public String getDirection() {
         return direction;
+    }
+
+    public void setCoordinateX(int coordinateX) {
+            this.coordinateX = coordinateX;
+    }
+
+    public void setCoordinateY(int coordinateY) {
+            this.coordinateY = coordinateY;
+    }
+
+
+    public void setDirection(String direction) {
+             this.direction = direction;
     }
 
     //向左转
