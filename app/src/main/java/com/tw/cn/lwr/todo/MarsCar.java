@@ -49,6 +49,17 @@ public class MarsCar {
         }
     }
 
-
+    //向前进一步
+    public void move(){
+        if("E".equals(this.direction)){
+            this.coordinateX += 1;
+        } else if("S".equals(this.direction)){
+            this.coordinateY -= 1;
+        } else if("W".equals(this.direction)){
+            this.coordinateX -= 1;
+        } else if("N".equals(this.direction)){
+            this.coordinateY += 1;
+        }
+    }
 
 }
