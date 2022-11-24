@@ -81,4 +81,16 @@ public class MarsCar {
         }
     }
 
+    //检查坐标是否合格
+    public boolean inspectCoordinate(){
+    return
+           !(this.coordinateX <0 || this.coordinateX > maxCoordinateX
+           || this.coordinateY <0 || this.coordinateY > maxCoordinateY
+           ||!("E".equals(this.direction)||"W".equals(this.direction)
+           ||"S".equals(this.direction)||"N".equals(this.direction)));
+
+    }
+
+
+
 }
