@@ -14,7 +14,7 @@ class MarsCarTest {
         Assertions.assertEquals("N",marsCar.getDirection());
     }
     @Test
-    void marsCar_should_turn_to_right_direction_when_go_to_left(){
+    void marsCar_should_turn_to_correct_direction_when_go_to_left(){
        MarsCar marsCar=new MarsCar(1,1,"N");
        marsCar.goToLeft();
        Assertions.assertEquals("W",marsCar.getDirection());
@@ -24,5 +24,18 @@ class MarsCarTest {
        Assertions.assertEquals("E",marsCar.getDirection());
        marsCar.goToLeft();
        Assertions.assertEquals("N",marsCar.getDirection());
+    }
+
+    @Test
+    void marsCar_should_turn_to_correct_direction_when_go_to_right(){
+        MarsCar marsCar=new MarsCar(2,3,"E");
+        marsCar.goToRight();
+        Assertions.assertEquals("S",marsCar.getDirection());
+        marsCar.goToRight();
+        Assertions.assertEquals("W",marsCar.getDirection());
+        marsCar.goToRight();
+        Assertions.assertEquals("N",marsCar.getDirection());
+        marsCar.goToRight();
+        Assertions.assertEquals("E",marsCar.getDirection());
     }
 }
