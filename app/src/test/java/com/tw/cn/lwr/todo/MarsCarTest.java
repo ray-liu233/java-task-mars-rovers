@@ -3,6 +3,7 @@ package com.tw.cn.lwr.todo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+
 class MarsCarTest {
 
     @Test
@@ -40,18 +41,29 @@ class MarsCarTest {
     }
 
     @Test
-    void marsCar_should_move_distance_when_face_to_corresponding_direction(){
-        MarsCar marsCar=new MarsCar(4,2,"E");
+    void marsCar_should_move_distance_when_face_to_corresponding_direction() {
+        MarsCar marsCar = new MarsCar(4, 2, "E");
         marsCar.move();
-        Assertions.assertEquals(5,marsCar.getCoordinateX());//(5,2)
+        Assertions.assertEquals(5, marsCar.getCoordinateX());//(5,2)
         marsCar.goToRight();
         marsCar.move();
-        Assertions.assertEquals(1,marsCar.getCoordinateY());//(5,1)
+        Assertions.assertEquals(1, marsCar.getCoordinateY());//(5,1)
         marsCar.goToRight();
         marsCar.move();
-        Assertions.assertEquals(4,marsCar.getCoordinateX());//(4,1)
+        Assertions.assertEquals(4, marsCar.getCoordinateX());//(4,1)
         marsCar.goToRight();
         marsCar.move();
-        Assertions.assertEquals(2,marsCar.getCoordinateY());//(4,2)
+        Assertions.assertEquals(2, marsCar.getCoordinateY());//(4,2)
     }
-}
+        @Test
+        void should_return_correct_value_when_set_car_coordinate(){
+            MarsCar marsCar=new MarsCar();
+            marsCar.setCoordinateX(2);
+            marsCar.setCoordinateY(4);
+            int[] carCoordinateArray={marsCar.getCoordinateX(),marsCar.getCoordinateY()};
+            int[] carTestCoordinateArray={2,4};
+            marsCar.setDirection("E");
+            Assertions.assertArrayEquals(carTestCoordinateArray,carCoordinateArray);
+            Assertions.assertEquals("E",marsCar.getDirection());
+        }
+    }
