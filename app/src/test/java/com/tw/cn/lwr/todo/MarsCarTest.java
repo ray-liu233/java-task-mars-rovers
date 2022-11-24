@@ -38,4 +38,20 @@ class MarsCarTest {
         marsCar.goToRight();
         Assertions.assertEquals("E",marsCar.getDirection());
     }
+
+    @Test
+    void marsCar_should_move_distance_when_face_to_corresponding_direction(){
+        MarsCar marsCar=new MarsCar(4,2,"E");
+        marsCar.move();
+        Assertions.assertEquals(5,marsCar.getCoordinateX());//(5,2)
+        marsCar.goToRight();
+        marsCar.move();
+        Assertions.assertEquals(1,marsCar.getCoordinateY());//(5,1)
+        marsCar.goToRight();
+        marsCar.move();
+        Assertions.assertEquals(4,marsCar.getCoordinateX());//(4,1)
+        marsCar.goToRight();
+        marsCar.move();
+        Assertions.assertEquals(2,marsCar.getCoordinateY());//(4,2)
+    }
 }
