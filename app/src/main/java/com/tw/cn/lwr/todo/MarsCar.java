@@ -23,4 +23,18 @@ public class MarsCar {
         return direction;
     }
 
+    //向左转
+    public void goToLeft() {
+        if ("E".equals(this.direction)) {
+            this.direction = "N";
+        } else if ("S".equals(this.direction)) {
+            this.direction = "E";
+        } else if ("W".equals(this.direction)) {
+            this.direction = "S";
+        } else if ("N".equals(this.direction)) {
+            this.direction = "W";
+        }
+    }
+
+
 }
