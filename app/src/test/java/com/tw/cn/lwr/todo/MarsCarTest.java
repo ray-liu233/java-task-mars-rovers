@@ -60,10 +60,37 @@ class MarsCarTest {
             MarsCar marsCar=new MarsCar();
             marsCar.setCoordinateX(2);
             marsCar.setCoordinateY(4);
+            marsCar.setDirection("E");
+
             int[] carCoordinateArray={marsCar.getCoordinateX(),marsCar.getCoordinateY()};
             int[] carTestCoordinateArray={2,4};
-            marsCar.setDirection("E");
+
             Assertions.assertArrayEquals(carTestCoordinateArray,carCoordinateArray);
             Assertions.assertEquals("E",marsCar.getDirection());
+        }
+
+        @Test
+        void should_return_correct_answer_when_check_mars_car_coordinate(){
+        MarsCar.maxCoordinateX=5;
+        MarsCar.maxCoordinateY=4;
+
+        MarsCar marsCar1=new MarsCar(1,2,"N");
+        Assertions.assertTrue(marsCar1.inspectCoordinate());
+
+        MarsCar marsCar2=new MarsCar(6,2,"E");
+        Assertions.assertFalse(marsCar2.inspectCoordinate());
+
+        MarsCar marsCar3=new MarsCar(3,5,"S");
+        Assertions.assertFalse(marsCar3.inspectCoordinate());
+
+        MarsCar marsCar4=new MarsCar(-1,3,"W");
+        Assertions.assertFalse(marsCar4.inspectCoordinate());
+
+        MarsCar marsCar5=new MarsCar(3,-2,"S");
+        Assertions.assertFalse(marsCar5.inspectCoordinate());
+
+        MarsCar marsCar6=new MarsCar(3,5,"A");
+        Assertions.assertFalse(marsCar6.inspectCoordinate());
+
         }
     }
