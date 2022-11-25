@@ -93,4 +93,5 @@ class MarsCarTest {
         Assertions.assertFalse(marsCar6.inspectCoordinate());
 
         }
-    }
+   }
+
